@@ -58,5 +58,4 @@ public class BSTNode {
 		this.right = right;
 	}
 	
-	
 }

@@ -193,46 +193,5 @@ public class BST implements BST_IF{
 		}
 		return resultado;
 	}
-	
-	/*
-	private boolean isComplete(BSTNode aux) {
-		if(aux.getLeft().isNIL() && aux.getLeft().isNIL()) {
-			return false;
-		} else if(!aux.getLeft().isNIL()) {
-			return isComplete(aux.getLeft());
-		} else if(!aux.getRight().isNIL()) {
-			return isComplete(aux.getRight());
-		} else {
-			boolean leftIsLeaf = aux.getLeft().isLeaf();
-			boolean rightIsLeaf = aux.getRight().isLeaf();
-			if(leftIsLeaf && !rightIsLeaf) return false;
-			else if(!leftIsLeaf && rightIsLeaf) return false;
-			else {
-				isComplete(aux.getLeft());
-				isComplete(aux.getRight());
-			}
-		}
-		return true;
-	}
-	
-	private boolean isCompleteTest() {
-		if(root.isNIL()) return false;
-		BSTNode aux = root;
-		while(!aux.isNIL()) {
-			if(aux.getLeft().isNIL() && aux.getLeft().isNIL()) {
-				return false;
-			} else if(!aux.getLeft().isNIL()) {
-				aux = aux.getLeft();
-			} else if(!aux.getRight().isNIL()) {
-				aux = aux.getRight();
-			} else {
-				if(!aux.getLeft().isLeaf() && aux.getRight().isLeaf()) {
-					return false;
-				} else if(aux.getLeft().isLeaf() && !aux.getRight().isLeaf()) {
-					return false;
-				}
-			}
-		}
-	}*/
 
 }
