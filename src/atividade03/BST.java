@@ -119,7 +119,7 @@ public class BST implements BST_IF{
 	public Pessoa[] preOrder() {
 		Pessoa[] pessoas = new Pessoa[size];
 		preOrder(root, pessoas);
-		indexDePercurso++;
+		indexDePercurso = 0;
 		return pessoas;
 	}
 	
@@ -135,7 +135,7 @@ public class BST implements BST_IF{
 	public Pessoa[] order() {
 		Pessoa[] pessoas = new Pessoa[size];
 		order(root, pessoas);
-		indexDePercurso++;
+		indexDePercurso = 0;
 		return pessoas;
 	}
 	
@@ -166,6 +166,10 @@ public class BST implements BST_IF{
 	private void visit(Pessoa pessoa, Pessoa[] pessoas) {
 		pessoas[indexDePercurso] = pessoa;
 		indexDePercurso++;
+	}
+	
+	public int size() {
+		return size;
 	}
 	
 	public int height() {

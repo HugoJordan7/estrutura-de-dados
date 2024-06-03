@@ -2,8 +2,8 @@ package atividade03;
 
 public class TabelaHash implements TabelaHash_IF {
 	
-	ListaEncadeada[] tabela;
-	int size;
+	private ListaEncadeada[] tabela;
+	private int size;
 	
 	public TabelaHash(int size) {
 		tabela = new ListaEncadeada[size];
@@ -15,17 +15,25 @@ public class TabelaHash implements TabelaHash_IF {
 
 	@Override
 	public void insert(Pessoa element) {
-		tabela[(int) (element.getCpf()%size)].insert(element);
+		tabela[hash(element.getCpf())].insert(element);
 	}
 
 	@Override
 	public void remove(Pessoa element) throws Exception {
-		tabela[(int) (element.getCpf()%size)].remove(element);
+		tabela[hash(element.getCpf())].remove(element);
 	}
 
 	@Override
 	public Pessoa search(Pessoa element) throws Exception {
-		return tabela[(int) (element.getCpf()%size)].search(element);
+		return tabela[hash(element.getCpf())].search(element);
+	}
+	
+	private int hash(long cpf) {
+		return (int) (cpf % size);
+	}
+	
+	public int size() {
+		return size;
 	}
 
 	@Override
@@ -43,6 +51,21 @@ public class TabelaHash implements TabelaHash_IF {
 			result = result + "\n";
 		}
 		return result;
+	}
+	
+	public String completePrint() {
+		String result = "";
+		for (int i = 0; i < tabela.length; i++) {
+			Pessoa[] array = tabela[i].toArray();
+			for (Pessoa pessoa : array) {
+				result = result + pessoa.toString() + "\n";
+			}
+		}
+		return result;
+	}
+
+	public ListaEncadeada get(int i) {
+		return tabela[i];
 	}
 
 }

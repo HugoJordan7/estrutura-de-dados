@@ -21,6 +21,9 @@ public class Pessoa implements Comparable<Pessoa>  {
 	public long getCpf() {
 		return cpf;
 	}
+	public int getCpftoInt() {
+		return (int) (cpf);
+	}
 	
 	public void setIdade(int idade) {
 		this.idade = idade;
@@ -49,6 +52,11 @@ public class Pessoa implements Comparable<Pessoa>  {
 			return false;
 		Pessoa other = (Pessoa) obj;
 		return cpf == other.cpf;
+	}
+
+	@Override
+	public String toString(){
+		return "\nNome: " + nome + "\nNumero: " + cpf + "\nIdade: " + idade;
 	}
 
 }

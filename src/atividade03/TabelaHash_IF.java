@@ -14,9 +14,9 @@ public interface TabelaHash_IF {
 	 OBSERVACAO:
 	 O metodo print() deve mostrar todos os elementos (CPFs) de cada posicao da tabela.
 	 Exemplo (com uma tabela de 8 posicoes):
-	 0: 24, 16
+	 familia: 24, 16
 	 1: 
-	 2: 10
+	 escola: 10
 	 3: 19, 11, 3
 	 4: 12, 4
 	 5: 
